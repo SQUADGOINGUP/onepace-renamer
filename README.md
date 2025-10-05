@@ -1,17 +1,17 @@
-# One Pace Renamer
+# 🏴‍☠️ One Pace Renamer
 
-A simple, open-source renamer utility for One Pace episode collections.  
-It automatically synchronizes filenames based on matching episode or chapter ranges  
-and even pairs `.nfo` or `.ini` system information files with the correct `.mp4`.
+A simple, open-source renaming utility for **One Pace** episode collections.  
+It automatically synchronizes filenames between `.mp4` episode files and their matching `.nfo` / `.ini` system information files — including automatic chapter matching and `[En Sub]` cleanup.
 
-## ✨ Features
-- Auto-detects and renames episodes based on `[###-###]` patterns
-- Copies system info files to their corresponding video
-- Works recursively across subfolders
-- Supports **dry run** and **commit** modes
-- Now supports drag-and-drop `.exe` use on Windows
+## Features
+-  **Smart Episode Matching:** Detects and pairs files using numeric chapter or episode ranges like `[700–703]`
+-  **System Info Sync:** Copies `.nfo` or `.ini` files to match their correct `.mp4` video file
+-  **Automatic Cleanup:** Removes `[En Sub]` tags if not found in the system info file
+-  **Recursive Search:** Scans all subfolders (e.g., Dressrosa, Wano, etc.)
+-  **Dry-Run Mode:** Preview changes before committing
 
-## 🧰 Usage
-### 1. Python Version
-```bash
-python onepace_sync_names.py --recurse
+   Common Issues
+Issue	Fix
+Nothing renamed -	Ensure .mp4 and .nfo/.ini share the same number range [###–###]
+Wrong matches -	Run in smaller subfolder scopes or rename ambiguous files manually
+[En Sub] not removed - Only removed if not found in the matched system info file
